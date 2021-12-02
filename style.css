@@ -1,0 +1,50 @@
+/* IMPORT FONTS */
+@font-face {
+  font-family: kayak-bold;
+  src: url("kayak-font/Kayak Sans Bold.otf")
+}
+
+* {
+    font-family: kayak-bold;
+}
+
+body {
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-align: center;
+}
+
+.gradient {
+  color: white;
+  background-image: radial-gradient(circle, #e9d9f9 0%, #ffa500 100%);
+  background-size: 400% 400%; /* so I can shift bkgd back and forth */
+  -webkit-animation: gradientBackground 10s ease infinite; /* animates */
+        animation: gradientBackground 10s ease infinite;
+}
+
+@-webkit-keyframes gradientBackground {
+  0% { background-position: 0% 50%;}
+  50% { background-position: 100% 50%;}
+  100% { background-position: 0% 50%;}
+}
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%;}
+  50% { background-position: 100% 50%;}
+  100% { background-position: 0% 50%;}
+}
+
+#header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 101vh;
+}
+
+#header h1 {
+  margin: 0;
+  font-size: 20vw;
+}
