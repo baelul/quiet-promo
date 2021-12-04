@@ -5,7 +5,12 @@
 }
 
 * {
+    color: white;
     font-family: kayak-bold;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -16,15 +21,73 @@ body {
   text-align: center;
 }
 
-.gradient {
+.sidebar {
+  top: 40%;
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  position: fixed;
+  z-index: 1;
+  background-color: transparent;
+  overflow-x: hidden;
+}
+
+.sidebar a {
+  padding: 10px 0px 6px 0px;
+  text-decoration: none;
+  font-size: 3vh;
   color: white;
+  display: block;
+}
+
+/* rezise to two cards a page at 712px */
+@media only screen and (max-width: 712px) {
+  .sidebar {
+    top: 0%;
+    justify-content: center;
+    width: 101vw;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+  }
+
+  .sidebar a {
+    color: white;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+  color: #f1f1f1;
+}
+
+.gradient-1 {
   background-image: radial-gradient(circle, #e9d9f9 0%, #ffa500 100%);
+}
+
+.gradient-2 {
+  background-image: radial-gradient(circle, #b1f3b1 0%, #89cff0 100%);
+}
+
+.gradient-3 {
+  background-image: radial-gradient(circle, #6f2da8 0%, #e39ff6 100%);
+}
+
+.gradient-4 {
+  background-image: radial-gradient(circle, #b1f3b1 0%, #89cff0 100%);
+}
+
+.gradient-1, .gradient-2, .gradient-3, .gradient-4 {
+  color: white;
   background-size: 400% 400%; /* so I can shift bkgd back and forth */
   -webkit-animation: gradientBackground 10s ease infinite; /* animates */
         animation: gradientBackground 10s ease infinite;
 }
 
-@-webkit-keyframes gradientBackground {
+@-webkit-keyframes gradientBackground { /* changes posiiton based on curr position */
   0% { background-position: 0% 50%;}
   50% { background-position: 100% 50%;}
   100% { background-position: 0% 50%;}
@@ -35,7 +98,7 @@ body {
   100% { background-position: 0% 50%;}
 }
 
-#header {
+#header, #about, #application, #insta {
   width: 100%;
   display: flex;
   flex-direction: column;
