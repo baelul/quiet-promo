@@ -3,14 +3,16 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="/css/master.css">
+    <link rel="icon" href="images/circle.png">
+    <link rel="stylesheet" href="glide.core.min.css">
     <title>quiet.</title>
   </head>
   <body>
     <div class="sidebar">
       <a href="#">home</a>
       <a href="#about">about</a>
-      <a href="#insta">idk</a>
+      <a href="#amenities">amenities</a>
+      <a href="#insta">instagram</a>
       <a href="#application">application</a>
     </div>
     <div class="gradient-1">
@@ -21,20 +23,92 @@
     </div>
     <div class="gradient-2">
       <div id="about">
-        about
+        <div class="sec-1">
+          <h1>about.</h1>
+          <h2>what is quiet?</h2>
+          <h3>quiet is an experience one could never forget.
+            the idea of this event is to replacate big brother;
+            think game show! you'll be staying in a nice japanese-style
+            capsule hotel, complete with fancy screens for you to
+            see our work in action. who knows who you'll meet...</h3>
+        </div>
+        <div class="sec-2">
+          <h2>where will you be located?</h2>
+          <img src="images/nyc.jpg" alt="manhattan-map">
+          <h3>
+            in the heart of lower manhattan, you will get to live with 100
+            or so other enthusiastic people of the city! you can experience
+            true new york without ever having to leave your place.
+          </h3>
+        </div>
       </div>
     </div>
     <div class="gradient-3">
-      <div id="insta">
-        insta promos
+      <div id="amenities">
+        <div class="sec-1">
+          <h1>amenities.</h1>
+          <img src="images/party.jpg" alt="party">
+        </div>
+        <div class="sec-2">
+          <h2>what is provided to you?</h2>
+          <h3>
+            by participating, you'll get unlimited access to anything you could ever dream of.
+            <ul>
+              <li>free clothes</li>
+              <li>cereal bar</li>
+              <li>(normal) bar</li>
+              <li>endless partying!</li>
+            </ul>
+            you will also get your own cubby to sleep in and watch the camera feeds!
+          </h3>
+        </div>
       </div>
     </div>
     <div class="gradient-4">
+      <div id="insta">
+        <div class="glide">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              <li class="glide__slide"><img src="images/smino.png" alt="smino"></li>
+              <li class="glide__slide"><img src="images/billieeilish.png" alt="billieeilish"></li>
+              <li class="glide__slide"><img src="images/jadensmith.png" alt="jadensmith"></li>
+              <li class="glide__slide"><img src="images/liluzivert.png" alt="liluzivert"></li>
+              <li class="glide__slide"><img src="images/arianagrande.png" alt="arianagrande"></li>
+              <li class="glide__slide"><img src="images/theweeknd.png" alt="theweeknd"></li>
+            </ul>
+          </div>
+          <div class="glide__arrows" data-glide-el="controls">
+            <a class="glide__arrow glide__arrow--left round" data-glide-dir="<">&#8249;</a>
+            <a class="glide__arrow glide__arrow--right round" data-glide-dir=">">&#8250;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gradient-5">
       <div id="application">
-        apps
+        <div class="sec-1">
+          <h1>how to apply.</h1>
+          <h2>personality test</h2>
+          <h3>only the best get into quiet! in order to participate, we need to
+          know that you're a cool person! you will be taking a personality test
+          so that we can get to know you a little better, and decide if you are a
+          good fit for this environment.</h3>
+        </div>
+        <div class="sec-2">
+          <h2>interview</h2>
+          <h3>
+            in addition to a small quiz, we will also be conducting interviews so
+            we can get a better look into who you really are. we want to meet you
+            face-to-face before you hang out with us officially!
+          </h3>
+          <img src="images/test.png" alt="test">
+        </div>
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+      new Glide('.glide').mount()
+    </script>
   </body>
 </html>

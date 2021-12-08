@@ -4,6 +4,8 @@
   src: url("kayak-font/Kayak Sans Bold.otf")
 }
 
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
 * {
     color: white;
     font-family: kayak-bold;
@@ -22,7 +24,7 @@ body {
 }
 
 .sidebar {
-  top: 40%;
+  top: 35%;
   display: flex;
   flex-direction: column;
   width: 25vw;
@@ -40,12 +42,126 @@ body {
   display: block;
 }
 
-/* rezise to two cards a page at 712px */
-@media only screen and (max-width: 712px) {
+.sidebar a:hover {
+  text-decoration: underline;
+  color: #f1f1f1;
+}
+
+.gradient-1 {
+  background-image: radial-gradient(circle, #e9d9f9 0%, #ffa500 100%);
+}
+
+.gradient-2 {
+  background-image: radial-gradient(circle, #d8e2dc 0%, #ffb3c1 100%);
+}
+
+.gradient-3 {
+  background-image: radial-gradient(circle, #89cff0 0%, #b1f3b1 100%);
+}
+
+.gradient-4 {
+  background-image: radial-gradient(circle, #90ee90 0%, #f0ceff 100%);
+}
+
+.gradient-5 {
+  background-image: radial-gradient(circle, #e5b6f7 0%, #ff6ec7 100%);
+}
+
+.gradient-1, .gradient-2, .gradient-3, .gradient-4, .gradient-5 {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  background-size: 400% 400%; /* so I can shift bkgd back and forth */
+  animation: gradientBackground 10s ease infinite; /* animates */
+}
+
+@-webkit-keyframes gradientBackground { /* changes posiiton based on curr position */
+  0% { background-position: 0% 50%;}
+  50% { background-position: 100% 50%;}
+  100% { background-position: 0% 50%;}
+}
+
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%;}
+  50% { background-position: 100% 50%;}
+  100% { background-position: 0% 50%;}
+}
+
+ul {
+  justify-content: center;
+}
+
+#header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 101vh;
+}
+
+#about, #application, #amenities, #insta {
+  display: flex;
+  align-items: center;
+  height: 101vh;
+}
+
+#about, #application, #amenities {
+  width: 65vw;
+  justify-content: flex-end;
+  margin-right: 15vw;
+}
+
+#insta {
+  width: 101vw;
+  justify-content: center;
+  margin-right: 0vw;
+}
+
+#about {
+  flex-direction: row;
+}
+
+#about h1, #application h1, #amenities h1, #insta h1 {
+  font-size: 100px;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+#header h1 {
+  margin: 0;
+  font-size: 20vw;
+}
+
+#about h2 {
+  margin: 0;
+  padding: 10px 0px 10px 0px;
+}
+
+#about img, #amenities img, #application img, #insta img {
+  max-width: 100%;
+  width: 85%;
+  height: auto;
+  padding-bottom: 10px;
+}
+
+#insta img {
+  padding-bottom: 0px;
+}
+
+#amenities ul {
+  padding: 20px 0px 20px 0px;
+  display: table;
+  margin: 0 auto;
+}
+
+
+/* resize at 712px */
+@media only screen and (max-width: 1000px) {
   .sidebar {
     top: 0%;
     justify-content: center;
-    width: 101vw;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     overflow-x: hidden;
@@ -57,57 +173,54 @@ body {
     text-align: center;
     text-decoration: none;
   }
+
+  #about, #application, #amenities, #insta  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    margin: 0;
+  }
+
+  #about img {
+    padding: 10px 0px 10px 0px;
+    max-width: 100%;
+    width: 45%;
+    height: auto;
+  }
+
+  #amenities img {
+    padding: 10px 0px 10px 0px;
+    max-width: 100%;
+    width: 55%;
+    height: auto;
+  }
+
+  #application img {
+    padding: 10px 0px 10px 0px;
+    max-width: 100%;
+    width: 45%;
+    height: auto;
+  }
+
+  #about h1, #application h1, #amenities h1, #insta h1 {
+    margin: 0;
+    padding: 10px 0px 0px 0px;
+  }
+
+  #about h2, #application h2, #amenities h2, #insta h2 {
+    margin: 0;
+    padding: 0px 80px 0px 80px;
+  }
+
+  #about h3, #application h3, #amenities h3, #insta h3 {
+    margin: 0;
+    padding: 10px 80px 20px 80px;
+  }
 }
 
-.sidebar a:hover {
-  text-decoration: underline;
-  color: #f1f1f1;
-}
-
-.gradient-1 {
-  background-image: radial-gradient(circle, #e9d9f9 0%, #ffa500 100%);
-}
-
-.gradient-2 {
-  background-image: radial-gradient(circle, #b1f3b1 0%, #89cff0 100%);
-}
-
-.gradient-3 {
-  background-image: radial-gradient(circle, #6f2da8 0%, #e39ff6 100%);
-}
-
-.gradient-4 {
-  background-image: radial-gradient(circle, #b1f3b1 0%, #89cff0 100%);
-}
-
-.gradient-1, .gradient-2, .gradient-3, .gradient-4 {
-  color: white;
-  background-size: 400% 400%; /* so I can shift bkgd back and forth */
-  -webkit-animation: gradientBackground 10s ease infinite; /* animates */
-        animation: gradientBackground 10s ease infinite;
-}
-
-@-webkit-keyframes gradientBackground { /* changes posiiton based on curr position */
-  0% { background-position: 0% 50%;}
-  50% { background-position: 100% 50%;}
-  100% { background-position: 0% 50%;}
-}
-@keyframes gradientBackground {
-  0% { background-position: 0% 50%;}
-  50% { background-position: 100% 50%;}
-  100% { background-position: 0% 50%;}
-}
-
-#header, #about, #application, #insta {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  height: 101vh;
-}
-
-#header h1 {
-  margin: 0;
-  font-size: 20vw;
+@media only screen and (max-width: 581px) {
+  #application h1 {
+    font-size: 80px;
+  }
 }
