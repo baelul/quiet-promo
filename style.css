@@ -67,10 +67,20 @@ body {
   background-image: radial-gradient(circle, #e5b6f7 0%, #ff6ec7 100%);
 }
 
+.gradient-6 {
+  background-image: radial-gradient(circle, #c8a2c9 0%, #4b0076 100%);
+}
+
 .gradient-1, .gradient-2, .gradient-3, .gradient-4, .gradient-5 {
   color: white;
   display: flex;
   justify-content: flex-end;
+  background-size: 400% 400%; /* so I can shift bkgd back and forth */
+  animation: gradientBackground 10s ease infinite; /* animates */
+}
+
+.gradient-6 {
+  color: white;
   background-size: 400% 400%; /* so I can shift bkgd back and forth */
   animation: gradientBackground 10s ease infinite; /* animates */
 }
@@ -87,10 +97,6 @@ body {
   100% { background-position: 0% 50%;}
 }
 
-ul {
-  justify-content: center;
-}
-
 #header {
   width: 100%;
   display: flex;
@@ -100,10 +106,30 @@ ul {
   height: 101vh;
 }
 
-#about, #application, #amenities, #insta {
+#about, #application, #amenities, #insta, #ty {
   display: flex;
   align-items: center;
   height: 101vh;
+}
+
+#start, #ty {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 101vh;
+}
+
+#start a {
+  padding: 20px 0px 0px 0px;
+  font-size: 40px;
+  text-decoration: none;
+}
+
+#start a:hover {
+  text-decoration: underline;
+  color: #f1f1f1;
 }
 
 #about, #application, #amenities {
@@ -113,7 +139,8 @@ ul {
 }
 
 #insta {
-  width: 101vw;
+  width: 100vw;
+  align-items: center;
   justify-content: center;
   margin-right: 0vw;
 }
@@ -122,10 +149,43 @@ ul {
   flex-direction: row;
 }
 
-#about h1, #application h1, #amenities h1, #insta h1 {
+input[type=submit] {
+  border: none;
+  font-size: 20px;
+  background-color: transparent;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  text-decoration: underline;
+  color: #f1f1f1;
+}
+
+#test input[type=text] {
+  color: black;
+}
+
+#about h1, #amenities h1, #insta h1 {
   font-size: 100px;
   margin: 0;
   padding-bottom: 20px;
+  line-height: 80%;
+}
+
+#test h1, #ty h1 {
+  font-size: 100px;
+  margin: 0;
+  padding: 20px 0px 20px 0px
+}
+
+#application h1 {
+  font-size: 73px;
+  margin: 0;
+  padding-bottom: 20px;
+  line-height: 80%;
 }
 
 #header h1 {
@@ -138,7 +198,12 @@ ul {
   padding: 10px 0px 10px 0px;
 }
 
-#about img, #amenities img, #application img, #insta img {
+#test h2 {
+  margin: 0;
+  padding: 0px 30px 0px 30px
+}
+
+#about img, #amenities img, #application img {
   max-width: 100%;
   width: 85%;
   height: auto;
@@ -146,15 +211,28 @@ ul {
 }
 
 #insta img {
-  padding-bottom: 0px;
+  max-width: 100%;
+  width: 85%;
+  height: auto;
 }
 
 #amenities ul {
+  justify-content: center;
+  text-align: left;
   padding: 20px 0px 20px 0px;
   display: table;
   margin: 0 auto;
 }
 
+.sec-1 {
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.sec-2 {
+  padding-right: 50px;
+  padding-left: 50px;
+}
 
 /* resize at 712px */
 @media only screen and (max-width: 1000px) {
@@ -168,17 +246,37 @@ ul {
   }
 
   .sidebar a {
-    color: white;
     padding: 10px 10px 10px 10px;
     text-align: center;
     text-decoration: none;
   }
 
-  #about, #application, #amenities, #insta  {
+  .sec-1 {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .sec-2 {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  #about, #application, #amenities  {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100vw;
+    margin: 0;
+  }
+
+  #insta {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 101vh;
+    padding: 0;
     margin: 0;
   }
 
@@ -203,24 +301,33 @@ ul {
     height: auto;
   }
 
-  #about h1, #application h1, #amenities h1, #insta h1 {
+  #about h1, #application h1, #amenities h1 {
     margin: 0;
     padding: 10px 0px 0px 0px;
   }
 
-  #about h2, #application h2, #amenities h2, #insta h2 {
+  #application h1 {
+    font-size: 80px;
+    padding: 0px 0px 10px 0px;
+  }
+
+  #about h2, #application h2, #amenities h2 {
     margin: 0;
     padding: 0px 80px 0px 80px;
   }
 
-  #about h3, #application h3, #amenities h3, #insta h3 {
+  #about h3, #application h3, #amenities h3 {
     margin: 0;
     padding: 10px 80px 20px 80px;
   }
 }
 
 @media only screen and (max-width: 581px) {
-  #application h1 {
-    font-size: 80px;
+  #application h1, #amenities h1, #about h1 {
+    font-size: 50px;
+  }
+
+  #insta img {
+    width: 70%;
   }
 }
